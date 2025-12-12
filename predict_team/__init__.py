@@ -6,11 +6,11 @@ import onnxruntime as ort
 import azure.functions as func
 
 # Ensure project root is importable (for src.* modules)
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
-from src.data.pokedex import ALL_POKEMON, NAME_TO_IDX, NUM_POKEMON
+from shared.pokedex import ALL_POKEMON, NAME_TO_IDX, NUM_POKEMON
 
 
 class OnnxLivePredictor:
